@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { HoverAnimation } from "@/components/HoverAnimation";
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -92,6 +93,8 @@ export default function App() {
             </Button>
           </CardContent>
         </Card>
+
+        <HoverAnimation />
       </main>
     </div>
   );

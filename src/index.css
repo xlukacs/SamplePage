@@ -32,3 +32,74 @@
     @apply bg-background text-foreground antialiased;
   }
 }
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(52px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(52px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-reverse {
+  from {
+    transform: rotate(360deg) translateX(52px) rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg) translateX(52px) rotate(0deg);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 2.5s ease-in-out infinite;
+  }
+
+  .group:hover .animate-float {
+    animation-duration: 1.2s;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 4s linear infinite;
+  }
+
+  .group:hover .animate-spin-slow {
+    animation-duration: 1.5s;
+  }
+
+  .animate-orbit {
+    animation: orbit 3s linear infinite;
+  }
+
+  .group:hover .animate-orbit {
+    animation-duration: 1.2s;
+  }
+
+  .animate-orbit-reverse {
+    animation: orbit-reverse 3s linear infinite;
+  }
+
+  .group:hover .animate-orbit-reverse {
+    animation-duration: 1.2s;
+  }
+}
